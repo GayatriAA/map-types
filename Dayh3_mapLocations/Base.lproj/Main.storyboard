@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00N-5S-wNM">
+                                <rect key="frame" x="113" y="502" width="149" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Detect Location"/>
+                                <connections>
+                                    <action selector="detect_Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVQ-gf-YJv"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Eq8-dM-to6">
+                                <rect key="frame" x="30" y="40" width="315" height="446"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="K63-JQ-BLw">
+                                <rect key="frame" x="30" y="568" width="315" height="29"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Satelite"/>
+                                    <segment title="Hybrid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectMapType:" destination="BYZ-38-t0r" eventType="valueChanged" id="EJG-aR-mw5"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="K63-JQ-BLw" firstAttribute="top" secondItem="00N-5S-wNM" secondAttribute="bottom" constant="24" id="6hM-wI-97Y"/>
+                            <constraint firstItem="K63-JQ-BLw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="AZj-2F-eYG"/>
+                            <constraint firstItem="00N-5S-wNM" firstAttribute="top" secondItem="Eq8-dM-to6" secondAttribute="bottom" constant="16" id="Eiq-mv-is7"/>
+                            <constraint firstItem="00N-5S-wNM" firstAttribute="top" secondItem="Eq8-dM-to6" secondAttribute="bottom" constant="16" id="F2D-M0-7Do"/>
+                            <constraint firstItem="00N-5S-wNM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="97" id="FmM-rA-lgA"/>
+                            <constraint firstItem="Eq8-dM-to6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="14" id="PCQ-F6-Zmk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="K63-JQ-BLw" secondAttribute="bottom" constant="71" id="VAi-Gk-cSb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eq8-dM-to6" secondAttribute="trailing" constant="14" id="Z3v-7x-m4c"/>
+                            <constraint firstItem="Eq8-dM-to6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Zsu-PW-50e"/>
+                            <constraint firstItem="K63-JQ-BLw" firstAttribute="top" secondItem="00N-5S-wNM" secondAttribute="bottom" constant="24" id="nJZ-ma-Lca"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="00N-5S-wNM" secondAttribute="trailing" constant="97" id="reV-eI-h6e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="K63-JQ-BLw" secondAttribute="trailing" constant="14" id="tAk-eL-WFM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myMapView" destination="Eq8-dM-to6" id="9jz-2M-HqU"/>
+                        <outlet property="mySegment" destination="K63-JQ-BLw" id="hUk-G1-kQx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
